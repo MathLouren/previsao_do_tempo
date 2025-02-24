@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Previsão do Tempo</h1>
+            <p>Obtenha a previsão do tempo em tempo real para qualquer cidade do mundo.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form id="weatherForm">
+                <div class="search-container">
+                    <input type="text" id="cityInput" placeholder="Digite o nome da cidade" required>
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                    <div id="suggestions"></div>
+                </div>
+            </form>
+            <div id="weatherInfo">
+            </div>
+            <div id="forecastInfo">
+            </div>
+            <div id="history">
+                <h3>Últimas pesquisas:</h3>
+                <ul id="historyList"></ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Previsão do Tempo. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Matheus Lourenço</p>
+        </div>
+    </footer>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
