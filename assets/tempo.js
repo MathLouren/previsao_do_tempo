@@ -129,3 +129,23 @@ document.getElementById('cityInput').addEventListener('input', function() {
 });
 
 window.onload = getUserLocation;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("acceptCookies");
+    const declineBtn = document.getElementById("declineCookies");
+
+    if (localStorage.getItem("cookiesAccepted") === "true") {
+        banner.style.display = "none";
+    }
+
+    acceptBtn.addEventListener("click", function () {
+        localStorage.setItem("cookiesAccepted", "true");
+        banner.style.display = "none";
+    });
+
+    declineBtn.addEventListener("click", function () {
+        localStorage.setItem("cookiesAccepted", "false");
+        banner.style.display = "none";
+    });
+});
