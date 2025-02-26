@@ -36,9 +36,15 @@ function getWeather(city) {
 function updateWeatherInfo(data) {
     const current = data.current;
     const location = data.location;
+    
+    const localTime = new Date(location.localtime);
+    const formattedDate = localTime.toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
+    const formattedTime = localTime.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 
     const weatherInfo = `
         <h2>${location.name}, ${location.country}</h2>
+        <p><strong>Data:</strong> ${formattedDate}</p>
+        <p><strong>Hora local:</strong> ${formattedTime}</p>
         <p>Temperatura: ${current.temp_c}°C</p>
         <p>Sensação térmica: ${current.feelslike_c}°C</p>
         <p>Condição: ${current.condition.text}</p>
@@ -49,6 +55,7 @@ function updateWeatherInfo(data) {
     `;
     document.getElementById('weatherInfo').innerHTML = weatherInfo;
 }
+
 
 function updateForecastInfo(forecastDays) {
     let forecastHTML = '';
